@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-danger text-white text-center fw-bold">
+            🗑️ Eliminar Instructor
+        </div>
+        <div class="card-body text-center">
+            <p class="fs-5 mb-4">
+                ¿Estás seguro de que deseas eliminar al instructor
+                <strong>{{ instructor.nombre }} {{ instructor.apellido }}</strong>?
+            </p>
+
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger px-4">
+                    Sí, eliminar
+                </button>
+                <a href="{% url 'ver_instructor' %}" class="btn btn-secondary px-4 ms-2">
+                    Cancelar
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

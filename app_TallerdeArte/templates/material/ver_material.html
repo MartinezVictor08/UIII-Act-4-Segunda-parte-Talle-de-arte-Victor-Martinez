@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Lista de Materiales</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th><th>Nombre</th><th>Tipo</th><th>Marca</th><th>Cantidad</th><th>Costo</th><th>Proveedor</th><th>descripcion</th><th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for m in materiales %}
+    <tr>
+      <td>{{ m.material_id }}</td>
+      <td>{{ m.nombre_material }}</td>
+      <td>{{ m.tipo }}</td>
+      <td>{{ m.marca }}</td>
+      <td>{{ m.cantidad_stock }}</td>
+      <td>{{ m.costo_unitario }}</td>
+      <td>{{ m.nombre_proveedor }}</td>
+      <td>{{ m.descripcion }}</td>
+      <td>
+        <a href="{% url 'actualizar_material' m.material_id %}" class="btn btn-warning btn-sm">Editar</a>
+        <a href="{% url 'borrar_material' m.material_id %}" class="btn btn-danger btn-sm">Borrar</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

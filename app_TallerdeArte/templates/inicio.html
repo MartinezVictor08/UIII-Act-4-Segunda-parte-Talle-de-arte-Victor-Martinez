@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container text-center mt-5">
+    <h1 class="display-5 fw-bold mb-4">🎨 Bienvenido al Sistema del Taller de Arte</h1>
+
+    <img src="{% static 'img/descarga.jpg' %}" alt="Taller de Arte"
+    class="img-fluid rounded shadow-lg" style="max-width: 700px;">
+
+    <p class="mt-4 fs-5 text-muted">
+        Administra instructores, cursos y materiales de una forma sencilla y visual.
+    </p>
+</div>
+
+{% endblock %}

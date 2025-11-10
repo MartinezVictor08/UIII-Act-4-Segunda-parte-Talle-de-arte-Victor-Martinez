@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Actualizar Instructor</h2>
+<form method="POST" action="/realizar_actualizacion_instructor/{{ instructor.instructor_id }}/">
+  {% csrf_token %}
+  <input type="text" name="nombre" value="{{ instructor.nombre }}" class="form-control mb-2">
+  <input type="text" name="apellido" value="{{ instructor.apellido }}" class="form-control mb-2">
+  <input type="text" name="especialidad" value="{{ instructor.especialidad }}" class="form-control mb-2">
+  <input type="text" name="telefono" value="{{ instructor.telefono }}" class="form-control mb-2">
+  <input type="email" name="correo" value="{{ instructor.correo }}" class="form-control mb-2">
+  <input type="number" name="experiencia_anios" value="{{ instructor.experiencia_anios }}" class="form-control mb-2">
+  <input type="text" name="sueldo" value="{{ instructor.sueldo }}" class="form-control mb-2">
+  <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+{% endblock %}

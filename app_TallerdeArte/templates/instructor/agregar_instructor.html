@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Agregar Instructor</h2>
+<form method="POST">
+  {% csrf_token %}
+  <input type="text" name="nombre" placeholder="Nombre" class="form-control mb-2">
+  <input type="text" name="apellido" placeholder="Apellido" class="form-control mb-2">
+  <input type="text" name="especialidad" placeholder="Especialidad" class="form-control mb-2">
+  <input type="text" name="telefono" placeholder="Teléfono" class="form-control mb-2">
+  <input type="email" name="correo" placeholder="Correo" class="form-control mb-2">
+  <input type="number" name="experiencia_anios" placeholder="Años de experiencia" class="form-control mb-2">
+  <input type="text" name="sueldo" placeholder="Sueldo" class="form-control mb-2">
+  <button type="submit" class="btn btn-success">Guardar</button>
+</form>
+{% endblock %}

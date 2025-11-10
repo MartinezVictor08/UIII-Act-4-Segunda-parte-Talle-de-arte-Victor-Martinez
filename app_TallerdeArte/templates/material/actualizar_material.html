@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Actualizar Material</h2>
+<form method="POST" action="{% url 'realizar_actualizacion_material' material.material_id %}">
+  {% csrf_token %}
+  <input type="text" name="nombre_material" value="{{ material.nombre_material }}" class="form-control mb-2">
+  <input type="text" name="tipo" value="{{ material.tipo }}" class="form-control mb-2">
+  <input type="text" name="marca" value="{{ material.marca }}" class="form-control mb-2">
+  <input type="number" name="cantidad_stock" value="{{ material.cantidad_stock }}" class="form-control mb-2">
+  <input type="text" name="costo_unitario" value="{{ material.costo_unitario }}" class="form-control mb-2">
+  <input type="text" name="nombre_proveedor" value="{{ material.nombre_proveedor }}" class="form-control mb-2">
+  <textarea name="descripcion" class="form-control mb-2">{{ material.descripcion }}</textarea>
+  <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+{% endblock %}

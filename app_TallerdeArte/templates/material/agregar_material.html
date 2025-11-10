@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Agregar Material</h2>
+<form method="POST">
+  {% csrf_token %}
+  <input type="text" name="nombre_material" placeholder="Nombre del material" class="form-control mb-2">
+  <input type="text" name="tipo" placeholder="Tipo" class="form-control mb-2">
+  <input type="text" name="marca" placeholder="Marca" class="form-control mb-2">
+  <input type="number" name="cantidad_stock" placeholder="Cantidad en stock" class="form-control mb-2">
+  <input type="text" name="costo_unitario" placeholder="Costo unitario" class="form-control mb-2">
+  <input type="text" name="nombre_proveedor" placeholder="Nombre proveedor" class="form-control mb-2">
+  <textarea name="descripcion" placeholder="Descripción" class="form-control mb-2"></textarea>
+  <!-- Si más adelante tienes cursos, puedes agregar un select para curso -->
+  <button type="submit" class="btn btn-success">Guardar</button>
+</form>
+{% endblock %}
